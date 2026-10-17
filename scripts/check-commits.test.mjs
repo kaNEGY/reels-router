@@ -46,7 +46,7 @@ test('PR: проверяет все новые коммиты и заголов�
     git('config', 'commit.gpgsign', 'false');
     git('commit', '--allow-empty', '-m', 'old invalid subject');
     git('checkout', '-b', 'feature');
-    git('commit', '--allow-empty', '-m', 'bad subject');
+    git('commit', '--allow-empty', '-m', 'fix: short\nДлинное тело не должно исправлять короткий заголовок');
     git('commit', '--allow-empty', '-m', 'feat(asr): добавление транскрибации');
     git('checkout', 'main');
     git('commit', '--allow-empty', '-m', 'another old invalid subject');
@@ -55,7 +55,7 @@ test('PR: проверяет все новые коммиты и заголов�
     git('merge', '--no-ff', 'main', '-m', 'Merge main into feature');
     const pr = { title: 'ci: добавление проверки коммитов', base: { sha: base }, head: { sha: git('rev-parse', 'HEAD') } };
     const subjects = getPrSubjects(pr, cwd);
-    assert.deepEqual(subjects.map(({ subject }) => subject), [pr.title, 'bad subject', 'feat(asr): добавление транскрибации']);
+    assert.deepEqual(subjects.map(({ subject }) => subject), [pr.title, 'fix: short', 'feat(asr): добавление транскрибации']);
     assert.equal(subjects.filter(({ subject }) => checkSubject(subject)).length, 1);
 
     const eventPath = join(cwd, 'event.json');
@@ -65,7 +65,7 @@ test('PR: проверяет все новые коммиты и заголов�
       cwd, env: { ...process.env, GITHUB_EVENT_PATH: eventPath }, encoding: 'utf8',
     });
     assert.equal(result.status, 1);
-    assert.match(result.stderr, /bad subject/u);
+    assert.match(result.stderr, /fix: short/u);
     assert.throws(() => getPrSubjects({ ...pr, head: { sha: '--all' } }, cwd));
   } finally {
     assert.equal(dirname(resolve(cwd)), resolve(tmpdir()));

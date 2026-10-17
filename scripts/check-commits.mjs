@@ -30,7 +30,7 @@ export function getPrSubjects(pr, cwd = process.cwd()) {
     { label: 'PR title', subject: pr.title },
     ...commits.map((sha) => ({
       label: sha.slice(0, 7),
-      subject: git('show', '-s', '--format=%s', sha).trimEnd(),
+      subject: git('show', '-s', '--format=%B', sha).split(/\r?\n/u)[0],
     })),
   ];
 }
