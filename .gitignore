@@ -1,0 +1,48 @@
+# Локальные окружения и кэш
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.jupyter/
+
+# Секреты и локальные настройки
+.env
+.env.*
+!.env.example
+cookies*.txt
+*.pem
+*.key
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Исходное медиа, веса и временные результаты
+data/raw/
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.wav
+*.mp3
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+outputs/
+mlruns/
+wandb/
+*.log
+
+# Личные инструкции и планы
+.codex/
+.claude/
+AGENTS.md
+/PLAN.md
+/RESEARCH.md
+/STATUS.md
