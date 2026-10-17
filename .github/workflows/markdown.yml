@@ -3,6 +3,7 @@ name: Markdown
 on:
   push:
   pull_request:
+    types: [opened, synchronize, reopened, edited]
   workflow_dispatch:
 
 permissions:
@@ -21,10 +22,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
+          fetch-depth: 0
           persist-credentials: false
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: '22'
+      - name: Test commit message checker
+        run: node --test scripts/check-commits.test.mjs
+      - name: Check commit messages and PR title
+        if: github.event_name == 'pull_request'
+        run: node scripts/check-commits.mjs --pr
       - name: Check Markdown
         run: npx --yes markdownlint-cli2@0.23.3
