@@ -1,0 +1,8 @@
+# Python 3.12; зависимости гайда groq_api_guide.ipynb
+requests==2.32.3
+yt-dlp==2026.10.21
+imageio-ffmpeg==0.6.0
+soundfile==0.13.1
+pandas==2.2.2
+Pillow==10.4.0
+ipykernel==6.29.4
