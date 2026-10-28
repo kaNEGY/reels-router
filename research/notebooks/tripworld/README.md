@@ -50,8 +50,8 @@
 
 ```sh
 python3 -m venv .venv
-.venv/bin/python -m pip install -r research/tripworld/requirements.txt
-.venv/bin/python research/tripworld/download.py data/raw/tripworld
-.venv/bin/python research/tripworld/download.py data/raw/tripworld --base-url http://127.0.0.1:9
-.venv/bin/python research/tripworld/eda.py data/raw/tripworld research/tripworld/results > eda.log 2>&1
+.venv/bin/python -m pip install -r research/notebooks/tripworld/requirements.txt
+.venv/bin/python research/notebooks/tripworld/download.py data/raw/tripworld
+.venv/bin/python research/notebooks/tripworld/download.py data/raw/tripworld --base-url http://127.0.0.1:9
+.venv/bin/python research/notebooks/tripworld/eda.py data/raw/tripworld research/notebooks/tripworld/results > eda.log 2>&1
 ```
