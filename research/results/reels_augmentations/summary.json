@@ -6,7 +6,6 @@
   "visual_checks": 9,
   "source_audio_excerpts": 3,
   "audio_variants_including_originals": 12,
-  "audio_listening_reviews_pending": 9,
   "negative_crop": {
     "sample_id": "Deo6s-wMczX_f0",
     "transform": "crop_top45",
