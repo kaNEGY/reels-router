@@ -1,0 +1,18 @@
+{
+  "reels_received": 8,
+  "reels_requested": 8,
+  "source_frames": 16,
+  "augmented_frames": 48,
+  "visual_checks": 9,
+  "source_audio_excerpts": 3,
+  "audio_variants_including_originals": 12,
+  "audio_listening_reviews_pending": 9,
+  "negative_crop": {
+    "sample_id": "Deo6s-wMczX_f0",
+    "transform": "crop_top45",
+    "lost_evidence": "надпись Sakurai Futamigaura",
+    "suitable_for_same_evidence_label": false
+  },
+  "models_used": false,
+  "sample_selection": "convenience sample; fixed seed; two frames per video"
+}
