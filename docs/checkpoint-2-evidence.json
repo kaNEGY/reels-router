@@ -1,0 +1,46 @@
+{
+  "baseline_commit": "dd9b7ba",
+  "checked_on": "2026-10-28",
+  "scope": "Сводка сохранённых результатов; не повторное вычисление исходных корпусов",
+  "virbench": {
+    "test_videos": 200,
+    "validation_videos": 4,
+    "test_poi": 3594,
+    "test_coordinates": 3505,
+    "test_unique_places": 2720,
+    "test_missing_category": 296,
+    "shared_places": 5
+  },
+  "overture_spb": {
+    "records": 14784,
+    "missing_aliases": 14661,
+    "missing_category": 331,
+    "missing_operating_status": 14784,
+    "repeated_names": 847
+  },
+  "other": {
+    "audiala_records": 33289,
+    "samuel_audrey_videos": 1397,
+    "samuel_audrey_utterances": 233285,
+    "mtd_gem_mentions": 9934,
+    "mtd_gem_fac": 1074,
+    "cityguessr_metadata": 68269
+  },
+  "sources": {
+    "virbench": "research/notebooks/virbench_eda.ipynb; cells 19,21,26",
+    "overture_spb": "research/notebooks/simple_eda.ipynb; cells 10,17",
+    "other": "research/notebooks/simple_eda.ipynb; cells 31,32",
+    "google_landmarks": "research/notebooks/google_landmarks_places_eda.ipynb; cells 6,10,12,17,26"
+  },
+  "compiled_on": "2026-11-03",
+  "google_landmarks": {
+    "records": 35070,
+    "features": 8,
+    "country_values": 193,
+    "missing_name": 7657,
+    "missing_city": 3329,
+    "missing_state": 4877,
+    "coordinates_valid": 35070,
+    "unique_category_names": 35070
+  }
+}
