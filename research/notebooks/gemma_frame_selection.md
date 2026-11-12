@@ -4,7 +4,7 @@
 
 ## Какие подсказки ищем
 
-Модель один раз кодирует пять запросов в указанном порядке. К каждому [код](../../src/gemma_frames.py) добавляет префикс `task: search result | query: `.
+Модель один раз кодирует пять запросов в указанном порядке. Полный промпт в [коде](../../src/gemma_frames.py) имеет вид `task: search result | query: {запрос}`.
 
 1. `a legible sign or storefront showing the name of a place`
 2. `a street sign, station name or direction sign identifying the location`
