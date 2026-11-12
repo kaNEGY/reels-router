@@ -1,0 +1,2 @@
+/src/run_gemma_notebook.sh text eol=lf
+/.env.example text eol=lf
