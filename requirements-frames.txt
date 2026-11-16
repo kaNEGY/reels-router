@@ -1,0 +1,6 @@
+-r requirements.txt
+transformers==5.22.2
+numpy==2.5.4
+pillow==13.0.0
+imageio-ffmpeg==0.8.0
+sentencepiece==0.2.3

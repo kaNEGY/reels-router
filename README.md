@@ -1,6 +1,6 @@
 # Мультимодальное определение геолокации по коротким туристическим видео
 
-[Правила работы, коммитов и ревью](CONTRIBUTING.md) · [Исследованные части приложения](docs/application-research.md) · [EDA](EDA.ipynb) · [Практическая ценность, PDF](docs/practical-value.pdf) · [CI](https://github.com/kaNEGY/reels-router/actions)
+[Правила работы, коммитов и ревью](CONTRIBUTING.md) · [Основа сервиса](docs/service-foundation.md) · [Исследованные части приложения](docs/application-research.md) · [EDA](EDA.ipynb) · [Практическая ценность, PDF](docs/practical-value.pdf) · [CI](https://github.com/kaNEGY/reels-router/actions)
 
 Все изменения — через отдельные feature-ветки и PR в `main`, с успешным CI и одобрением другого участника команды.
 
