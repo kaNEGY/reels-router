@@ -1,0 +1,41 @@
+services:
+  orchestrator:
+    build:
+      context: .
+      dockerfile: docker/orchestrator.Dockerfile
+    env_file: .env
+    ports:
+      - "127.0.0.1:8000:8000"
+    networks: [backend]
+    restart: unless-stopped
+  media:
+    build:
+      context: .
+      dockerfile: docker/media.Dockerfile
+    env_file: .env
+    networks: [backend]
+    cpus: 2
+    mem_limit: 2g
+    restart: unless-stopped
+  frames:
+    build:
+      context: .
+      dockerfile: docker/frames.Dockerfile
+    env_file: .env
+    environment:
+      GEMMA_MODEL: /weights
+      HF_HUB_OFFLINE: '1'
+    volumes:
+      - gemma_weights:/weights:ro
+    networks: [backend]
+    cpus: 3
+    mem_limit: 6g
+    restart: unless-stopped
+networks:
+  backend:
+    external: true
+    name: ${DOCKER_NETWORK:?Укажите имя существующей сети в .env}
+volumes:
+  gemma_weights:
+    external: true
+    name: ${GEMMA_MODEL_VOLUME:?Укажите существующий том с весами в .env}
